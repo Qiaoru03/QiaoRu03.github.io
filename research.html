@@ -1,0 +1,1451 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111110">
+<meta name="description" content="Qiaoru Yi — PhD applicant in immune regulation, ischemic injury and tissue repair.">
+<title>Qiaoru Yi | Research</title>
+<style>
+:root{
+  --bg:#111110; --panel:#191918; --panel2:#151514; --text:#ece9e3;
+  --muted:#9f9b93; --line:#35332f; --accent:#c6a987; --soft:#c9c4bb;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--accent)}
+.wrap{max-width:var(--max);margin:auto;padding:0 38px}
+.mono,.eyebrow,.nav,.meta,.tag,.year,.marker{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)
+}
+header{
+  position:sticky;top:0;z-index:20;background:#111110ef;
+  backdrop-filter:blur(14px);border-bottom:1px solid #ffffff0d
+}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{
+  font-family:Arial,Helvetica,sans-serif;font-size:14px;letter-spacing:-.03em;
+  text-transform:none;color:var(--text);font-weight:700
+}
+.navlinks{display:flex;gap:27px;align-items:center}
+.navlinks a{transition:color .2s}
+.hero{
+  padding:88px 0 84px;border-bottom:1px solid var(--line);
+  display:grid;grid-template-columns:1.35fr .65fr;gap:65px;align-items:center
+}
+.eyebrow{color:var(--accent);margin-bottom:23px}
+.hero h1{
+  font-size:clamp(55px,7vw,88px);line-height:.93;letter-spacing:-.075em;
+  font-weight:500;margin:0 0 28px;max-width:730px
+}
+.hero h1 span{color:var(--muted)}
+.lead{font-size:17px;line-height:1.65;max-width:650px;color:#c5c1b9;margin:0}
+.hero-aside{justify-self:end;width:min(100%,330px)}
+.portrait{
+  width:100%;aspect-ratio:4/5;display:block;object-fit:cover;
+  object-position:center 34%;border-radius:2px;filter:saturate(.88)
+}
+.portrait-caption{display:flex;justify-content:space-between;gap:12px;margin-top:11px}
+.portrait-caption span{
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:9px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--muted)
+}
+.availability{display:flex;align-items:center;gap:10px;margin:25px 0 10px;color:var(--muted);font-size:13px}
+.dot{width:7px;height:7px;border-radius:50%;background:#9fbd91;box-shadow:0 0 12px #9fbd9180}
+.buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;border:1px solid #625b51;
+  border-radius:3px;padding:11px 15px;font-size:12px;transition:.2s
+}
+.btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary:hover{background:var(--accent);color:var(--bg)}
+.section{padding:70px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:1fr 2fr;gap:35px;margin-bottom:34px}
+.section-head h2{font-size:12px;font-weight:400;color:var(--muted);margin:2px 0}
+.section-head p{font-size:20px;line-height:1.5;letter-spacing:-.025em;margin:0;max-width:710px}
+.research-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.research-card{
+  background:var(--panel);padding:23px 21px;min-height:190px;
+  border:1px solid transparent;transition:border-color .25s,transform .25s
+}
+.research-card:hover{border-color:#514b42;transform:translateY(-3px)}
+.card-num{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;color:var(--accent);margin-bottom:25px}
+.research-card h3{font-size:16px;line-height:1.35;font-weight:500;letter-spacing:-.025em;margin:0 0 9px}
+.research-card p{color:var(--muted);font-size:12px;margin:0;line-height:1.6}
+.entry{display:grid;grid-template-columns:1fr 2fr;gap:35px;padding:24px 0;border-top:1px solid var(--line)}
+.entry:first-of-type{border-top:0}
+.entry-side{display:flex;flex-direction:column;gap:6px}
+.entry-side .year{color:var(--accent)}
+.entry h3{font-size:16px;line-height:1.4;font-weight:500;margin:0 0 4px;letter-spacing:-.02em}
+.entry .sub{color:var(--muted);font-size:12px;margin-bottom:10px}
+.entry p{font-size:12px;color:#aaa69e;margin:0;max-width:690px}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}
+.tag{border:1px solid var(--line);padding:4px 8px;font-size:9px}
+.project-link{display:inline-flex;margin-top:14px;color:var(--accent);font-size:12px;border-bottom:1px solid #6c5e4f;padding-bottom:2px}
+.featured-project{
+  margin-top:28px;background:linear-gradient(180deg,#191918,#151514);
+  border:1px solid var(--line);display:grid;grid-template-columns:1.12fr .88fr;gap:0;overflow:hidden
+}
+.featured-copy{padding:34px 34px 32px}
+.featured-copy .eyebrow{margin-bottom:15px}
+.featured-copy h3{
+  font-size:clamp(30px,4vw,48px);line-height:1.04;letter-spacing:-.05em;
+  font-weight:500;margin:0 0 18px;max-width:720px
+}
+.featured-copy p{color:var(--muted);font-size:13px;margin:0;max-width:640px}
+.featured-image{
+  background:#fff;min-height:290px;display:flex;align-items:center;justify-content:center;padding:24px
+}
+.featured-image img{max-width:100%;max-height:300px;object-fit:contain}
+.pub{display:grid;grid-template-columns:66px 1fr;gap:18px;padding:20px 0;border-top:1px solid var(--line);align-items:start}
+.pub:first-of-type{border-top:0}
+.pub .year{color:var(--accent);padding-top:3px}
+.pub h3{font-size:14px;font-weight:500;line-height:1.5;margin:0 0 6px}
+.pub p{margin:0;color:var(--muted);font-size:11px}
+.edu{display:grid;grid-template-columns:1fr 2fr;gap:35px;padding:19px 0;border-top:1px solid var(--line)}
+.edu:first-of-type{border-top:0}
+.edu h3{font-size:15px;font-weight:500;margin:0}
+.edu p{color:var(--muted);font-size:12px;margin:4px 0 0}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.skill{border:1px solid var(--line);padding:8px 11px;color:#c3beb5;font-size:11px}
+.contact{padding:82px 0 90px;display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:end}
+.contact h2{font-size:clamp(40px,6vw,68px);line-height:.98;letter-spacing:-.07em;font-weight:500;margin:14px 0 0}
+.contact-right{justify-self:end;max-width:390px}
+.contact-right p{color:var(--muted);font-size:13px;margin:0 0 20px}
+.contact-email{font-size:17px;border-bottom:1px solid #625b51;padding-bottom:5px}
+.footer{
+  padding:22px 0 28px;border-top:1px solid var(--line);display:flex;
+  justify-content:space-between;color:var(--muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:9px;text-transform:uppercase;letter-spacing:.06em
+}
+.top{
+  position:fixed;right:25px;bottom:25px;width:40px;height:40px;border:1px solid var(--line);
+  background:#191918;color:var(--muted);display:grid;place-items:center;opacity:0;
+  pointer-events:none;transition:.25s
+}
+.top.show{opacity:1;pointer-events:auto}
+
+/* Project page */
+.project-hero{padding:80px 0 64px;border-bottom:1px solid var(--line)}
+.project-hero h1{
+  max-width:980px;margin:18px 0 20px;font-size:clamp(54px,7vw,88px);
+  line-height:1.02;letter-spacing:-.065em;font-weight:500
+}
+.project-intro{max-width:890px;margin:0;color:#c5c1b9;font-size:20px;line-height:1.7}
+.scope{
+  max-width:930px;margin:35px 0 0;padding:22px 26px;border-left:3px solid var(--accent);
+  background:var(--panel);font-size:18px;line-height:1.55
+}
+.scope strong{font-weight:700}
+.project-meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.meta-pill{border:1px solid var(--line);padding:7px 10px;color:var(--muted);font-size:11px}
+.chapter{
+  display:grid;grid-template-columns:170px minmax(0,1fr);gap:40px;
+  padding:52px 0;border-top:1px solid var(--line)
+}
+.chapter:first-of-type{border-top:0}
+.marker{color:var(--accent);font-size:13px}
+.marker span{
+  display:block;margin-top:8px;color:var(--muted);
+  font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:0;
+  line-height:1.4;text-transform:none
+}
+.chapter h2{margin:0 0 11px;font-size:29px;line-height:1.22;font-weight:500;letter-spacing:-.03em}
+.copy{max-width:780px;margin:0 0 24px;color:var(--muted);font-size:16px;line-height:1.7}
+.image-wrap{width:100%;max-width:820px;padding:12px;border:1px solid var(--line);background:#fff}
+.image-wrap img{display:block;width:100%;height:auto}
+.role{display:flex;align-items:center;gap:10px;margin:17px 0 0;color:var(--muted);font-size:15px;line-height:1.45}
+.role::before{width:28px;height:1px;background:var(--accent);content:""}
+.backlink{color:var(--accent);font-size:12px}
+
+@media(max-width:760px){
+  .wrap{padding:0 22px}
+  .nav{height:60px}
+  .navlinks{gap:13px;font-size:9px}
+  .hero{grid-template-columns:1fr;padding:69px 0 58px;gap:32px}
+  .hero h1{font-size:clamp(53px,14vw,78px)}
+  .hero-aside{justify-self:start;width:min(100%,370px)}
+  .section{padding:55px 0}
+  .section-head{grid-template-columns:1fr;gap:12px;margin-bottom:25px}
+  .section-head p{font-size:18px}
+  .research-grid{grid-template-columns:1fr}
+  .research-card{min-height:auto}
+  .card-num{margin-bottom:16px}
+  .entry,.edu,.chapter{grid-template-columns:1fr;gap:12px}
+  .entry-side{flex-direction:row;gap:12px;align-items:center}
+  .pub{grid-template-columns:48px 1fr;gap:10px}
+  .featured-project{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr;gap:28px;padding:63px 0}
+  .contact-right{justify-self:start}
+  .footer{gap:12px;flex-wrap:wrap}
+  .project-hero{padding:55px 0 42px}
+  .project-hero h1{font-size:clamp(44px,12vw,68px)}
+  .project-intro{font-size:17px}
+  .chapter{padding:40px 0}
+  .marker{display:flex;gap:9px;align-items:baseline}
+  .marker span{display:inline;margin:0}
+}
+
+.hli-preview{
+  width:100%;
+  min-height:290px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#181817,#141413);
+  padding:26px;
+}
+.hli-preview svg{width:100%;height:auto;display:block}
+
+
+/* Research Direction — visually aligned with Research Interests */
+.direction-frame{
+  margin-top:6px;
+}
+.direction-question{
+  background:linear-gradient(180deg,#191918 0%,#161615 100%);
+  border:1px solid var(--line);
+  padding:28px 30px 26px;
+  margin-bottom:14px;
+}
+.direction-meta{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:14px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.direction-question h3{
+  margin:0 0 8px;
+  max-width:900px;
+  font-size:clamp(23px,2.8vw,34px);
+  line-height:1.24;
+  letter-spacing:-.035em;
+  font-weight:500;
+}
+.direction-question p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+}
+.direction-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+.direction-card{
+  background:var(--panel);
+  padding:24px 22px 22px;
+  border:1px solid transparent;
+  min-height:230px;
+  position:relative;
+  transition:border-color .25s, transform .25s;
+}
+.direction-card:hover{
+  border-color:#514b42;
+  transform:translateY(-3px);
+}
+.direction-card .card-num{
+  margin-bottom:20px;
+}
+.direction-card h3{
+  margin:0 0 10px;
+  font-size:16px;
+  line-height:1.38;
+  letter-spacing:-.02em;
+  font-weight:600;
+}
+.direction-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.65;
+}
+.direction-foundation{
+  margin-top:14px;
+  padding:18px 20px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:18px;
+  align-items:start;
+}
+.direction-foundation .label{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.direction-foundation .foundation-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+.direction-foundation .foundation-tags span{
+  color:#c3beb5;
+  border:1px solid var(--line);
+  padding:5px 8px;
+  font-size:10px;
+}
+@media(max-width:760px){
+  .direction-grid{grid-template-columns:1fr}
+  .direction-card{min-height:auto}
+  .direction-question{padding:24px 20px}
+  .direction-foundation{grid-template-columns:1fr;gap:10px}
+}
+
+
+/* Final readability polish */
+body{font-size:15.5px}
+.mono,.eyebrow,.nav,.meta,.tag,.year{font-size:12px}
+.research-card p{font-size:13px}
+.entry .sub{font-size:13px}
+.entry p{font-size:13px}
+.tag{font-size:10px;padding:5px 9px}
+.pub p{font-size:12px}
+.edu p{font-size:13px}
+.skill{font-size:12px}
+.project-link{font-size:13px}
+.footer{font-size:10px}
+
+/* Research experience */
+.experience-list{
+  display:grid;
+  gap:14px;
+}
+.experience-item{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:38px;
+  padding:28px 28px 27px;
+  background:#151514;
+  border:1px solid var(--line);
+  position:relative;
+  transition:border-color .22s ease, transform .22s ease, background .22s ease;
+}
+.experience-item:hover{
+  border-color:#514b42;
+  background:#181817;
+  transform:translateY(-2px);
+}
+.experience-item.primary{
+  background:linear-gradient(100deg,#191817 0%,#151514 72%);
+  border-color:#554b40;
+}
+.experience-item.primary::before{
+  content:"";
+  position:absolute;
+  left:-1px;top:-1px;bottom:-1px;
+  width:3px;
+  background:var(--accent);
+}
+.experience-side{padding-top:2px}
+.experience-date{
+  display:block;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:8px;
+}
+.experience-org{
+  display:block;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+.experience-topline{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:4px;
+}
+.experience-main h3{
+  margin:0;
+  font-size:18px;
+  line-height:1.38;
+  letter-spacing:-.02em;
+  font-weight:600;
+}
+.primary-badge,
+.pub-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  border:1px solid #62584d;
+  padding:4px 8px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9.5px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--accent);
+  white-space:nowrap;
+}
+.pub-badge{
+  border-color:var(--line);
+  color:var(--muted);
+}
+.experience-sub{
+  color:#b2ada4;
+  font-size:13px;
+  margin:0 0 12px;
+}
+.experience-desc{
+  color:#aaa69e;
+  font-size:13.5px;
+  line-height:1.68;
+  margin:0;
+  max-width:780px;
+}
+.experience-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:14px;
+}
+.experience-actions .project-link{margin-top:0}
+.experience-item .tags{margin-top:15px}
+@media(max-width:760px){
+  .experience-item{
+    grid-template-columns:1fr;
+    gap:12px;
+    padding:23px 20px;
+  }
+  .experience-side{
+    display:flex;
+    gap:12px;
+    align-items:baseline;
+    flex-wrap:wrap;
+  }
+}
+
+
+/* Research-experience visual previews */
+.experience-item{
+  grid-template-columns:210px minmax(0,1fr) 245px;
+  align-items:start;
+}
+.experience-preview{
+  width:100%;
+  min-height:176px;
+  background:#f6f6f4;
+  border:1px solid #3a3834;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+}
+.experience-preview img{
+  width:100%;
+  height:176px;
+  object-fit:contain;
+  display:block;
+  background:#fff;
+}
+.experience-preview.hli{
+  background:linear-gradient(180deg,#191918,#141413);
+  padding:16px;
+}
+.experience-preview.hli svg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.preview-label{
+  position:absolute;
+  left:10px;
+  bottom:9px;
+  padding:4px 7px;
+  background:#111110e8;
+  color:var(--muted);
+  border:1px solid #3f3c37;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.experience-preview:hover{
+  border-color:#6b5d4d;
+}
+@media(max-width:980px){
+  .experience-item{
+    grid-template-columns:180px minmax(0,1fr);
+  }
+  .experience-preview{
+    grid-column:2;
+    max-width:520px;
+    margin-top:4px;
+  }
+}
+@media(max-width:760px){
+  .experience-item{
+    grid-template-columns:1fr;
+  }
+  .experience-preview{
+    grid-column:auto;
+    max-width:none;
+    margin-top:6px;
+  }
+}
+
+
+/* Revised information hierarchy */
+.navlinks{gap:22px}
+
+/* Education + honors */
+.education-wrap{display:grid;gap:24px}
+.honors-block{
+  margin-top:18px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.honors-head{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:35px;
+  margin-bottom:20px;
+}
+.honors-head .kicker{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--accent);
+}
+.honors-head p{
+  margin:0;
+  color:var(--muted);
+  font-size:13px;
+  max-width:690px;
+}
+.honor-summary{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:18px;
+}
+.honor-chip{
+  border:1px solid var(--line);
+  padding:7px 10px;
+  color:#c3beb5;
+  font-size:11px;
+  background:#151514;
+}
+.evidence-grid{
+  display:grid;
+  grid-template-columns:1.15fr 1.15fr .9fr .9fr;
+  gap:10px;
+}
+.evidence-card{
+  background:#171716;
+  border:1px solid var(--line);
+  overflow:hidden;
+  min-width:0;
+}
+.evidence-card .visual{
+  height:155px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0e0e0d;
+  overflow:hidden;
+}
+.evidence-card img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.evidence-card .caption{
+  padding:11px 12px 12px;
+  border-top:1px solid var(--line);
+}
+.evidence-card .caption strong{
+  display:block;
+  font-size:12px;
+  color:var(--text);
+  margin-bottom:2px;
+  font-weight:600;
+}
+.evidence-card .caption span{
+  font-size:10px;
+  color:var(--muted);
+  line-height:1.45;
+}
+
+/* Publication formatting */
+.pub h3{
+  font-size:14px;
+  font-weight:400;
+  line-height:1.65;
+}
+.pub h3 strong{
+  color:var(--accent);
+  font-weight:600;
+}
+.pub .pub-role{
+  margin-top:6px;
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* Future research transition */
+.future-intro{
+  margin:8px 0 0;
+  padding:18px 20px;
+  border-left:2px solid var(--accent);
+  background:#151514;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.65;
+}
+
+@media(max-width:920px){
+  .evidence-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .honors-head{grid-template-columns:1fr;gap:8px}
+  .evidence-grid{grid-template-columns:1fr}
+  .evidence-card .visual{height:205px}
+}
+
+
+/* Education & honors final polish */
+.honors-layout{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  gap:14px;
+  margin-top:18px;
+}
+.awards-panel,
+.language-panel{
+  background:linear-gradient(180deg,#181817,#151514);
+  border:1px solid var(--line);
+  padding:22px;
+}
+.panel-kicker{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color:var(--accent);
+  font-size:10px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+}
+.award-feature{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:18px;
+  align-items:center;
+  margin-bottom:16px;
+}
+.award-feature img{
+  width:100%;
+  height:118px;
+  object-fit:contain;
+  background:#0f0f0e;
+  border:1px solid #34322f;
+}
+.award-title{
+  color:var(--text);
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:3px;
+}
+.award-sub{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.5;
+}
+.award-list{
+  display:grid;
+  gap:8px;
+  margin-top:14px;
+}
+.award-row{
+  display:grid;
+  grid-template-columns:112px 1fr;
+  gap:14px;
+  padding-top:9px;
+  border-top:1px solid var(--line);
+}
+.award-row .year{
+  color:var(--accent);
+  font-size:10px;
+}
+.award-row .name{
+  color:#c9c4bb;
+  font-size:12px;
+}
+.volunteer-mini{
+  margin-top:16px;
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:14px;
+  align-items:center;
+}
+.volunteer-mini img{
+  width:100%;
+  height:80px;
+  object-fit:contain;
+  background:#0f0f0e;
+  border:1px solid #34322f;
+}
+.language-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.language-lead{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
+.cet-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+.cet-card{
+  border:1px solid #3a3834;
+  background:#111110;
+  overflow:hidden;
+}
+.cet-card .score{
+  padding:16px 16px 10px;
+}
+.cet-card .score .label{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color:var(--accent);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.cet-card .score .number{
+  margin-top:4px;
+  color:var(--text);
+  font-size:34px;
+  letter-spacing:-.05em;
+  line-height:1;
+  font-weight:600;
+}
+.cet-card .score .meta{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.4;
+}
+.cet-card .proof{
+  height:78px;
+  background:#f7f7f7;
+  border-top:1px solid #34322f;
+}
+.cet-card .proof img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+@media(max-width:900px){
+  .honors-layout{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .award-feature{grid-template-columns:1fr}
+  .award-feature img{height:150px}
+  .cet-grid{grid-template-columns:1fr}
+}
+
+
+/* Education & honors refinement v8 */
+.awards-panel,.language-panel{
+  padding:24px;
+}
+.award-feature{
+  grid-template-columns:205px 1fr;
+  gap:20px;
+}
+.award-feature img{
+  height:136px;
+  object-fit:contain;
+  background:#10100f;
+  border:1px solid #393631;
+}
+.award-title{font-size:14px}
+.award-sub{font-size:11.5px}
+.award-row .name{font-size:12.5px}
+.volunteer-mini img{height:86px}
+
+.cet-grid{
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.cet-card .score{
+  padding:14px 15px 12px;
+}
+.cet-card .score .label{
+  font-size:10.5px;
+}
+.cet-card .score .number{
+  font-size:30px;
+  margin-top:5px;
+}
+.cet-card .score .meta{
+  font-size:10px;
+  margin-top:7px;
+  line-height:1.45;
+}
+.cet-card .proof{
+  height:108px;
+  padding:7px;
+  background:#f7f7f7;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.cet-card .proof img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+  background:#fff;
+}
+.language-lead{
+  margin-bottom:16px;
+}
+@media(max-width:680px){
+  .award-feature{grid-template-columns:1fr}
+  .award-feature img{height:185px}
+  .cet-card .proof{height:120px}
+}
+
+
+/* Layout integrity fix */
+.section{width:100%}
+.section > *{min-width:0}
+.education-wrap,.honors-layout,.awards-panel,.language-panel,
+#skills .skills,#research .research-grid,#direction .direction-frame{min-width:0}
+#skills,#research,#direction{padding-top:70px;padding-bottom:70px}
+#skills .skills{gap:9px}
+#skills .skill{font-size:12px;line-height:1.35}
+.honors-layout{grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+.awards-panel,.language-panel{overflow:hidden}
+.cet-card{min-width:0}
+.cet-card .proof{height:112px}
+.cet-card .proof img{object-fit:contain}
+@media(max-width:900px){.honors-layout{grid-template-columns:1fr}}
+
+
+/* Contact — a little life beyond the bench */
+.contact{
+  padding:82px 0 86px;
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(480px,1.1fr);
+  gap:54px;
+  align-items:center;
+}
+.contact-copy{max-width:510px}
+.contact h2{
+  font-size:clamp(42px,5.5vw,68px);
+  line-height:.98;
+  letter-spacing:-.065em;
+  font-weight:500;
+  margin:14px 0 22px;
+}
+.contact-copy .contact-lead{
+  color:#c4c0b8;
+  font-size:14px;
+  line-height:1.75;
+  margin:0 0 19px;
+  max-width:480px;
+}
+.contact-email{
+  display:inline-block;
+  font-size:17px;
+  border-bottom:1px solid #625b51;
+  padding-bottom:5px;
+}
+.beyond{
+  margin-top:30px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+}
+.beyond .label{
+  display:block;
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+  margin-bottom:7px;
+}
+.beyond p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.6;
+}
+.life-collage{
+  display:grid;
+  grid-template-columns:1.35fr .8fr;
+  grid-template-rows:1fr 1fr;
+  gap:10px;
+  min-height:430px;
+}
+.life-photo{
+  margin:0;
+  position:relative;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#181817;
+}
+.life-photo.main{
+  grid-row:1 / span 2;
+}
+.life-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:saturate(.86) contrast(.98);
+  transition:transform .45s ease, filter .35s ease;
+}
+.life-photo:hover img{
+  transform:scale(1.018);
+  filter:saturate(1) contrast(1);
+}
+.life-photo.main img{object-position:center 42%}
+.life-photo.run img{object-position:center 45%}
+.life-photo.tennis img{object-position:center 48%}
+.life-photo figcaption{
+  position:absolute;
+  left:10px;
+  bottom:10px;
+  padding:5px 8px;
+  border:1px solid #ffffff22;
+  background:#111110d9;
+  color:#d8d4cc;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  backdrop-filter:blur(7px);
+}
+@media(max-width:900px){
+  .contact{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .contact-copy{max-width:650px}
+  .life-collage{
+    min-height:520px;
+    grid-template-columns:1.2fr .8fr;
+  }
+}
+@media(max-width:620px){
+  .life-collage{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:330px 190px;
+    min-height:0;
+  }
+  .life-photo.main{
+    grid-column:1 / span 2;
+    grid-row:auto;
+  }
+  .contact h2{font-size:clamp(39px,12vw,58px)}
+}
+
+
+/* Contact layout v11 — horizontal winter banner */
+.contact{
+  padding:82px 0 86px;
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+  gap:48px;
+  align-items:start;
+}
+.contact-copy{
+  max-width:480px;
+  padding-top:6px;
+}
+.life-collage{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:220px 235px;
+  gap:10px;
+  min-height:0;
+}
+.life-photo.main{
+  grid-column:1 / span 2;
+  grid-row:1;
+}
+.life-photo.run{
+  grid-column:1;
+  grid-row:2;
+}
+.life-photo.tennis{
+  grid-column:2;
+  grid-row:2;
+}
+.life-photo.main img{
+  object-position:center 43%;
+}
+.life-photo.run img{
+  object-position:center 43%;
+}
+.life-photo.tennis img{
+  object-position:center 48%;
+}
+.life-photo figcaption{
+  left:12px;
+  bottom:11px;
+}
+@media(max-width:900px){
+  .contact{
+    grid-template-columns:1fr;
+    gap:34px;
+  }
+  .contact-copy{
+    max-width:680px;
+  }
+  .life-collage{
+    grid-template-rows:210px 220px;
+  }
+}
+@media(max-width:620px){
+  .life-collage{
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:190px 175px;
+  }
+  .life-photo.main{
+    grid-column:1 / span 2;
+    grid-row:1;
+  }
+}
+
+
+/* Bilingual language switch */
+.lang-switch{
+  display:inline-flex;
+  align-items:center;
+  gap:2px;
+  margin-left:10px;
+  padding:3px;
+  border:1px solid var(--line);
+  background:#151514;
+  border-radius:999px;
+  flex:0 0 auto;
+}
+.lang-switch button{
+  appearance:none;
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.06em;
+  padding:6px 9px;
+  border-radius:999px;
+  cursor:pointer;
+  transition:background .2s ease,color .2s ease;
+}
+.lang-switch button.active{
+  background:var(--text);
+  color:var(--bg);
+}
+.lang-switch button:hover:not(.active){
+  color:var(--accent);
+}
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+@media(max-width:760px){
+  .navlinks{gap:10px}
+  .lang-switch{margin-left:2px}
+  .lang-switch button{padding:5px 7px;font-size:9px}
+}
+
+
+/* v14 — clearer education chronology */
+.education-academic{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 300px;
+  gap:24px;
+  align-items:start;
+  margin-bottom:26px;
+}
+.degree-list{border-top:1px solid var(--line)}
+.degree-item{
+  display:grid;
+  grid-template-columns:165px minmax(0,1fr);
+  gap:24px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+}
+.degree-time{
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:11px;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+.degree-item h3{margin:0 0 4px;font-size:16px;font-weight:500}
+.degree-item p{margin:0;color:var(--muted);font-size:12.5px}
+.training-card{
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,#191918,#151514);
+  padding:21px;
+}
+.training-kicker{
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+.training-time{
+  color:var(--muted);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  margin-bottom:8px;
+}
+.training-card h3{margin:0 0 8px;font-size:15px;line-height:1.4;font-weight:600}
+.training-card p{margin:0;color:var(--muted);font-size:11.5px;line-height:1.6}
+
+/* v14 — categorized methods */
+.methods-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.method-group{
+  min-height:150px;
+  padding:20px;
+  border:1px solid var(--line);
+  background:#171716;
+  transition:border-color .2s ease,transform .2s ease;
+}
+.method-group:hover{border-color:#574e44;transform:translateY(-2px)}
+.method-kicker{
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9.5px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  margin-bottom:11px;
+}
+.method-group h3{margin:0 0 13px;font-size:15px;font-weight:600;line-height:1.35}
+.method-tags{display:flex;flex-wrap:wrap;gap:7px}
+.method-tags span{
+  display:inline-block;
+  border:1px solid #383631;
+  padding:5px 8px;
+  color:#bbb7ae;
+  font-size:10.5px;
+  line-height:1.35;
+}
+
+/* v14 — local / cross-organ / outcome logic */
+.direction-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.direction-card{min-height:215px}
+.cross-organ-note{
+  margin-top:14px;
+  border-left:2px solid var(--accent);
+  padding:15px 18px;
+  background:#151514;
+}
+.cross-organ-note .note-label{
+  display:block;
+  margin-bottom:5px;
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9.5px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.cross-organ-note p{margin:0;color:var(--muted);font-size:12px;line-height:1.65}
+
+@media(max-width:900px){
+  .education-academic{grid-template-columns:1fr}
+  .methods-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+  .degree-item{grid-template-columns:1fr;gap:6px}
+  .methods-grid,.direction-grid{grid-template-columns:1fr}
+}
+
+
+/* v16 — multipage academic portfolio */
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+  "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+}
+.hero h1,.page-intro h1,.portal-card h2,.contact h2,
+.direction-question h3,.experience-topline h3{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+}
+.hero h1{font-size:clamp(50px,6.5vw,78px);letter-spacing:-.055em}
+.section-head p{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif}
+.tag{
+  text-transform:none !important;
+  letter-spacing:.015em !important;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
+}
+.navlinks a.active{color:var(--accent)}
+.page-intro{
+  padding:82px 0 48px;
+  border-bottom:1px solid var(--line);
+  max-width:900px;
+}
+.page-intro .eyebrow{margin-bottom:16px}
+.page-intro h1{
+  margin:0 0 18px;
+  font-size:clamp(42px,5.4vw,66px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  font-weight:500;
+}
+.page-intro p{
+  margin:0;
+  max-width:760px;
+  color:#c5c1b9;
+  font-size:16px;
+  line-height:1.75;
+}
+.portal-section{padding:52px 0 74px;border-bottom:1px solid var(--line)}
+.portal-head{
+  display:flex;justify-content:space-between;gap:25px;align-items:end;
+  margin-bottom:22px;
+}
+.portal-head h2{
+  margin:0;font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:28px;font-weight:500;letter-spacing:-.03em;
+}
+.portal-head p{margin:0;color:var(--muted);font-size:12px;max-width:440px}
+.portal-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+}
+.portal-card{
+  display:block;min-height:185px;padding:23px;
+  background:linear-gradient(180deg,#191918,#151514);
+  border:1px solid var(--line);position:relative;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.portal-card:hover{transform:translateY(-3px);border-color:#6a5d50;color:inherit}
+.portal-card .portal-label{
+  color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:25px;
+}
+.portal-card h2{
+  margin:0 0 9px;font-size:25px;font-weight:500;line-height:1.15;letter-spacing:-.025em;
+}
+.portal-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.65;max-width:430px}
+.portal-card .arrow{
+  position:absolute;right:20px;top:20px;color:var(--accent);font-size:17px;
+}
+.content-section{padding:48px 0 74px;border-bottom:1px solid var(--line)}
+.content-section > .section{padding-top:0;border-bottom:0}
+.subsection{
+  padding:48px 0;border-bottom:1px solid var(--line)
+}
+.subsection:last-child{border-bottom:0}
+.subsection-kicker{
+  color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px
+}
+.subsection h2{
+  margin:0 0 22px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:30px;font-weight:500;letter-spacing:-.03em
+}
+.subsection .subnote{margin:-10px 0 24px;color:var(--muted);font-size:12px;max-width:720px}
+@media(max-width:860px){
+  .portal-grid{grid-template-columns:1fr}
+  .navlinks{gap:13px}
+}
+@media(max-width:720px){
+  .navlinks{
+    max-width:calc(100vw - 155px);
+    overflow-x:auto;white-space:nowrap;scrollbar-width:none
+  }
+  .navlinks::-webkit-scrollbar{display:none}
+  .portal-head{display:block}
+  .portal-head p{margin-top:8px}
+}
+
+
+/* v18 — boss-friendly / skim-first */
+:root{--max:1080px}
+body{line-height:1.55}
+.wrap{max-width:var(--max);padding:0 34px}
+.hero{padding:72px 0 64px;gap:54px}
+.hero h1{font-size:clamp(50px,6vw,74px);margin-bottom:20px}
+.lead{font-size:16px;line-height:1.6;max-width:620px}
+.section,.content-section{padding-top:46px;padding-bottom:54px}
+.page-intro{padding:66px 0 34px}
+.page-intro h1{font-size:clamp(38px,4.8vw,56px);margin-bottom:12px}
+.page-intro p{font-size:14px;max-width:700px}
+.section-head{margin-bottom:22px}
+.section-head p{font-size:17px}
+.portal-section{padding:40px 0 58px}
+.portal-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.portal-card{min-height:150px;padding:19px}
+.portal-card .portal-label{margin-bottom:18px}
+.portal-card h2{font-size:21px}
+.portal-card p{font-size:11.5px}
+.quick-strip{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+  margin:24px 0 0;
+}
+.quick-item{
+  border-top:1px solid var(--line);padding-top:11px;
+}
+.quick-item strong{
+  display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px
+}
+.quick-item span{font-size:10.5px;color:var(--muted);line-height:1.4}
+.experience-item{padding-top:24px;padding-bottom:24px}
+.experience-desc{font-size:12px!important;line-height:1.6!important}
+.experience-preview{max-height:185px}
+.tags{margin-top:9px}
+.tag{font-size:8.5px;padding:3px 7px}
+.methods-grid{gap:9px}
+.method-group{min-height:120px;padding:17px}
+.method-group h3{font-size:14px;margin-bottom:9px}
+.method-tags span{font-size:9.5px;padding:4px 7px}
+.pub{padding:16px 0}
+.pub h3{font-size:13px;line-height:1.55}
+.degree-item{padding:16px 0}
+.subsection{padding:34px 0}
+.subsection h2{font-size:26px;margin-bottom:16px}
+.research-grid{gap:9px}
+.research-card{min-height:155px;padding:19px}
+.research-card .card-num{margin-bottom:16px}
+.research-card h3{font-size:15px}
+.research-card p{font-size:11.5px}
+.direction-grid{gap:9px}
+.direction-card{min-height:175px;padding:19px}
+.direction-card h3{font-size:15px!important}
+.direction-card p{font-size:11.5px!important}
+.contact{padding-top:58px;padding-bottom:64px}
+.contact h2{font-size:clamp(36px,4.8vw,56px)}
+.life-collage{grid-template-rows:180px 190px}
+@media(max-width:900px){
+  .portal-grid{grid-template-columns:1fr 1fr}
+  .quick-strip{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .portal-grid,.quick-strip{grid-template-columns:1fr}
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">QY<span style="color:var(--accent)">.</span></a>
+    <div class="nav-right"><nav class="navlinks"><a href="experience.html">Experience</a><a href="publications.html">Publications</a><a href="methods.html">Methods</a><a href="research.html" class="active">Research</a><a href="about.html">About</a></nav><div class="lang-switch" aria-label="Language switch">
+      <button type="button" data-lang-btn="en" class="active" aria-pressed="true">EN</button>
+      <button type="button" data-lang-btn="zh" aria-pressed="false">中</button>
+    </div></div>
+  </div>
+</header>
+
+
+<main id="home">
+<div class="wrap">
+<section class="page-intro">
+  <div class="eyebrow">Research</div>
+  <h1>Research interests &amp; PhD direction</h1>
+  <p>One central question guides my future work: how tissue environments shape immune-cell states, and how local and systemic immune responses influence repair.</p>
+</section>
+
+<section class="subsection">
+  <div class="research-grid">
+    <article class="research-card"><div class="card-num">01 — TISSUE CONTEXT</div><h3>Immune microenvironments</h3><p>How injury-associated cues reshape immune-cell composition and function.</p></article>
+    <article class="research-card"><div class="card-num">02 — CELL STATE</div><h3>Immune-cell plasticity</h3><p>How immune states emerge, transition, and acquire tissue-specific functions.</p></article>
+    <article class="research-card"><div class="card-num">03 — CROSS-ORGAN</div><h3>Cross-organ immunity</h3><p>Whether local injury can trigger coordinated immune responses in distant tissues.</p></article>
+    <article class="research-card"><div class="card-num">04 — OUTCOME</div><h3>Repair &amp; regeneration</h3><p>How local and systemic immune regulation shapes vascular and tissue recovery.</p></article>
+  </div>
+</section>
+
+<section class="subsection">
+  <div class="subsection-kicker">PhD focus</div>
+  <h2>From local immune states to tissue-level outcomes</h2>
+  <p class="subnote">My proposed PhD direction is to connect single-cell state transitions with tissue interactions and, where relevant, cross-organ immune communication. These are future research questions rather than established conclusions.</p>
+</section>
+<footer class="footer">
+  <span>© 2026 Qiaoru Yi</span>
+  <span>Nankai University · Tianjin, China</span>
+  <a href="#home">Back to top ↑</a>
+</footer>
+</div>
+</main>
+
+<a class="top" href="#home" aria-label="Back to top">↑</a>
+<script>
+const topLink=document.querySelector('.top');
+addEventListener('scroll',()=>topLink.classList.toggle('show',scrollY>500));
+</script>
+
+<script>
+(() => {
+  const translations = {"PhD applicant · Tissue repair & regeneration": "博士申请 · 组织修复与再生", "I am a Master’s candidate in Biochemistry and Molecular Biology at Nankai University. My research asks how ischemic injury reshapes tissue-specific immune states — and how those changes influence vascular repair and regeneration.": "我现为南开大学生物化学与分子生物学硕士研究生。我的研究关注缺血性损伤如何重塑组织特异性的免疫状态，以及这些变化如何影响血管修复与组织再生。", "PhD applications · 2027/28 entry": "博士申请 · 2027/28 入学", "Nankai University · Tianjin, China": "南开大学 · 中国天津", "Get in touch": "联系我", "Research experience": "研究经历", "Biochemistry & Molecular Biology": "生物化学与分子生物学", "01 / Research experience": "01 / 研究经历", "Research experience progressing from molecular expression analysis to tumor immunology and, currently, immune regulation in ischemic tissue repair.": "我的研究经历从分子表达分析逐步拓展到肿瘤免疫，目前聚焦于缺血性组织修复中的免疫调控。", "Sep 2024 — Present": "2024年9月 — 至今", "Sep 2024 — Jun 2025": "2024年9月 — 2025年6月", "Sep 2023 — Jun 2024": "2023年9月 — 2024年6月", "Lower-limb ischemia and immune-mediated tissue repair": "下肢缺血与免疫介导的组织修复", "★ Primary project": "★ 核心项目", "Master’s research · Ongoing": "硕士课题 · 进行中", "I established the mouse hindlimb ischemia model through lower-limb vascular dissection and ligation, and led ischemic-tissue collection and immune characterization. I used flow cytometry, single-cell transcriptomic analysis, and single-cell TCR sequencing to investigate immune-cell heterogeneity and Treg states. Follow-up work includes CRISPR-based perturbation, molecular assays, and functional validation.": "我通过下肢血管分离与结扎建立小鼠后肢缺血（HLI）模型，并主导缺血组织采集及免疫表型分析。结合流式细胞术、单细胞转录组和单细胞TCR测序研究免疫细胞异质性及Treg状态；后续进一步开展基于CRISPR的扰动实验、分子检测与功能验证。", "View research framework →": "查看研究框架 →", "Hindlimb ischemia model": "后肢缺血模型", "Flow cytometry": "流式细胞术", "scRNA-seq": "scRNA-seq", "scTCR-seq": "scTCR-seq", "CRISPR-Cas9": "CRISPR-Cas9", "Ongoing · unpublished": "进行中 · 未发表", "Immunological mechanisms of the antitumour effects of Marvelon in MC38": "Marvelon 抑制 MC38 肿瘤生长的免疫学机制", "Publication · Fourth author": "论文发表 · 第四作者", "Tumor immunity research": "肿瘤免疫研究", "Contributed to the in vivo MC38 tumor model, tumor-infiltrating immune-cell functional analysis, and in vitro tumor-cell and immune-cell experiments.": "参与MC38体内肿瘤模型、肿瘤浸润免疫细胞功能分析，以及肿瘤细胞和免疫细胞相关体外实验。", "View full project →": "查看完整项目 →", "Representative result": "代表性结果", "Spatio-temporal expression of miR-133a-5p in": "miR-133a-5p 在", "Publication · Sixth author": "论文发表 · 第六作者", "Molecular biology research": "分子生物学研究", "Contributed RNA extraction, qPCR, and rhythm-related data analysis, including work on the effect of fasting on rhythmic expression.": "参与RNA提取、qPCR及节律相关数据分析，包括禁食对节律性表达影响的研究。", "02 / Publications": "02 / 论文发表", "Peer-reviewed research contributions spanning tumor immunology and molecular biology.": "已发表的同行评议研究涵盖肿瘤免疫和分子生物学。", "Fourth author · Tumor immunity": "第四作者 · 肿瘤免疫", "See my project contribution →": "查看我的项目贡献 →", "Sixth author · Molecular biology": "第六作者 · 分子生物学", "03 / Education & honors": "03 / 教育背景与荣誉", "Academic training in molecular biology and bioengineering, together with selected scholarships, service recognition, and English-language qualifications.": "接受了分子生物学与生物工程的系统训练，并获得多项奖学金、志愿服务荣誉及英语能力认证。", "M.Sc. in Biochemistry and Molecular Biology": "生物化学与分子生物学 硕士", "Bioinformatics Experimental Training Module": "生物信息学实验训练模块", "Jointly offered by Nankai University and BGI Mammoth Education": "南开大学与华大教育联合开设", "Sep 2020 — Jun 2024": "2020年9月 — 2024年6月", "B.Eng. in Bioengineering": "生物工程 工学学士", "Changsha University · Changsha, China": "长沙学院 · 中国长沙", "Scholarships & honors": "奖学金与荣誉", "National Encouragement Scholarship": "国家励志奖学金", "Academic year 2020–21 · National-level scholarship recognition": "2020–2021学年 · 国家级奖学金", "Nankai University Gongneng Academic Third-Class Scholarship": "南开大学公能学业三等奖学金", "Outstanding Volunteer": "优秀志愿者", "Community service recognition · 2021": "社区志愿服务荣誉 · 2021", "English qualifications": "英语能力", "Selected CET examination records are shown with their complete score breakdowns.": "展示部分CET考试成绩及完整分项得分。", "Listening 178 · Reading 203 · Writing & Translation 175": "听力 178 · 阅读 203 · 写作与翻译 175", "Listening 92 · Reading 223 · Writing & Translation 169": "听力 92 · 阅读 223 · 写作与翻译 169", "04 / Methods & tools": "04 / 方法与技术", "Experimental and analytical approaches developed across my research projects.": "在科研项目中积累的实验与分析方法。", "Mouse ischemia models": "小鼠缺血模型", "Tissue collection": "组织采集", "Single-cell transcriptomics": "单细胞转录组", "qPCR": "qPCR", "Western blot": "Western blot", "RNA extraction": "RNA提取", "FlowJo / FACS analysis": "FlowJo / FACS分析", "Tumour models": "肿瘤模型", "Based on the research experience above, my longer-term interest is to understand how tissue microenvironments shape immune-cell states and how those states influence disease and tissue repair.": "基于上述研究经历，我希望长期探索组织微环境如何塑造免疫细胞状态，以及这些状态如何影响疾病进程和组织修复。", "05 / Research interests": "05 / 研究兴趣", "From tissue injury to repair: understanding how immune cells sense their environment, adapt their functional states, and shape tissue outcomes.": "从组织损伤到修复：理解免疫细胞如何感知其微环境、调整功能状态，并进一步塑造组织结局。", "01 — TISSUE CONTEXT": "01 — 组织环境", "Immune microenvironments": "免疫微环境", "How tissue injury and local inflammatory cues shape immune-cell composition and function.": "研究组织损伤及局部炎症信号如何塑造免疫细胞组成与功能。", "02 — CELL STATE": "02 — 细胞状态", "Immune-cell plasticity": "免疫细胞可塑性", "Defining immune-cell heterogeneity and functional states through single-cell analysis and mechanistic validation.": "通过单细胞分析与机制验证解析免疫细胞异质性和功能状态。", "03 — TISSUE OUTCOME": "03 — 组织结局", "Tissue repair and regeneration": "组织修复与再生", "Investigating how immune regulation influences tissue recovery after injury, including post-ischemic vascular repair.": "研究免疫调控如何影响损伤后的组织恢复，包括缺血后的血管修复。", "06 / Research direction": "06 / 研究方向", "From immune-cell states to tissue repair: exploring how tissue environments and cellular interactions shape immune function and recovery.": "从免疫细胞状态到组织修复：探索组织环境与细胞间相互作用如何塑造免疫功能及组织恢复。", "Doctoral research": "博士研究设想", "2027/28 entry": "2027/28 入学", "How do immune-cell states emerge from tissue interactions, and how do they shape tissue repair?": "免疫细胞状态如何在组织相互作用中形成，并进一步影响组织修复？", "A proposed direction for PhD study": "拟开展的博士阶段研究方向", "01 — CELLULAR STATES": "01 — 细胞状态", "How are immune-cell states established and maintained?": "免疫细胞状态如何建立并维持？", "Investigating the regulatory processes underlying immune-cell heterogeneity, functional plasticity, and state transitions.": "研究免疫细胞异质性、功能可塑性及状态转换背后的调控过程。", "02 — TISSUE INTERACTIONS": "02 — 组织相互作用", "How do immune cells interact with their tissue environments?": "免疫细胞如何与其组织环境相互作用？", "Exploring how local cues and interactions with other cell populations shape immune-cell function across distinct tissue contexts.": "探索局部信号以及与其他细胞群的相互作用如何在不同组织背景下塑造免疫细胞功能。", "03 — TISSUE OUTCOMES": "03 — 组织结局", "How do immune-cell interactions influence tissue repair?": "免疫细胞相互作用如何影响组织修复？", "Understanding how immune regulation contributes to tissue recovery, vascular remodeling, and repair-associated outcomes.": "理解免疫调控如何参与组织恢复、血管重塑及修复相关结局。", "Research foundation": "研究基础", "Treg biology": "Treg生物学", "Ischemic injury": "缺血性损伤", "Single-cell immunology": "单细胞免疫学", "Tissue repair": "组织修复", "07 / Contact": "07 / 联系方式", "Good research starts with curiosity — and a good conversation.": "好的研究始于好奇心，也始于一次有价值的交流。", "I am exploring PhD opportunities for the 2027/28 academic year. If your group works on immune regulation, tissue microenvironments, or repair and regeneration, I would be glad to discuss potential research fit.": "我正在申请2027/28学年的博士项目。如果您的课题组关注免疫调控、组织微环境或组织修复与再生，我非常期待进一步交流潜在的研究契合点。", "Beyond the bench": "实验之外", "Outside the lab, I enjoy running, winter trips, and tennis — activities that keep me curious, energetic, and balanced.": "实验室之外，我喜欢跑步、冬季旅行和网球。这些活动让我保持好奇、活力与平衡。", "Explore": "探索", "Run": "跑步", "Play": "网球", "Home": "主页", "Experience": "经历", "Publications": "论文发表", "Education": "教育", "Future research": "未来研究", "Contact": "联系", "Back to top ↑": "返回顶部 ↑", "Degree education is shown in reverse chronological order, with additional bioinformatics training presented separately.": "正式学位教育按时间倒序展示，额外的生物信息学训练单独呈现。", "Additional training": "补充训练", "Experimental and analytical approaches organized by research scale, from in vivo models to molecular, protein, omics, and gene-perturbation analysis.": "按照研究层级对实验与分析方法进行分类，从体内模型到分子、蛋白、组学分析及基因扰动。", "01 — In vivo": "01 — 体内研究", "Models & tissue work": "模型与组织操作", "02 — Cellular": "02 — 细胞层面", "Cell & immune phenotyping": "细胞与免疫表型分析", "03 — Molecular": "03 — 分子层面", "Molecular biology": "分子生物学", "04 — Protein": "04 — 蛋白层面", "Protein analysis": "蛋白分析", "05 — Single-cell": "05 — 单细胞", "Single-cell & clonal analysis": "单细胞与克隆分析", "06 — Perturbation": "06 — 功能扰动", "Genetic perturbation": "基因扰动", "From local immune-cell states to tissue repair and cross-organ coordination: exploring how tissue environments, cell-cell interactions, and systemic immune communication shape recovery.": "从局部免疫细胞状态到组织修复与跨器官协同：探索组织环境、细胞间相互作用及全身性免疫通讯如何共同塑造组织恢复。", "How do immune-cell states emerge from tissue interactions, and can local injury coordinate immune responses across organs to shape repair?": "免疫细胞状态如何在组织相互作用中形成？局部损伤是否可能通过跨器官免疫协同影响组织修复？", "How do immune cells interact with their local tissue environments?": "免疫细胞如何与局部组织微环境相互作用？", "Exploring how local cues and interactions with stromal, vascular, and other immune-cell populations shape immune-cell function in distinct tissue contexts.": "探索局部信号以及与基质细胞、血管细胞和其他免疫细胞群的相互作用，如何在不同组织背景下塑造免疫细胞功能。", "03 — CROSS-ORGAN IMMUNITY": "03 — 跨器官免疫", "Can local injury engage cross-organ immune communication?": "局部损伤能否触发跨器官免疫通讯？", "Exploring the possibility that local tissue injury induces systemic immune changes or immune-cell trafficking that may influence responses in distant organs.": "探索局部组织损伤是否可能引发全身性免疫变化或免疫细胞迁移，并进一步影响远端器官反应。", "04 — TISSUE OUTCOMES": "04 — 组织结局", "How do local and systemic immune responses influence tissue repair?": "局部与全身性免疫反应如何共同影响组织修复？", "Understanding how immune regulation contributes to tissue recovery, vascular remodeling, regeneration, and repair-associated outcomes.": "理解免疫调控如何参与组织恢复、血管重塑、组织再生及其他修复相关结局。", "Exploratory perspective": "探索性方向", "Cross-organ immune interaction is presented as a future research possibility rather than an established conclusion, with particular interest in whether localized injury can be accompanied by coordinated immune responses in distant tissues.": "跨器官免疫互作在此作为未来研究的可能方向，而非既定结论。我尤其关注局部损伤是否会伴随远端组织中的协同免疫反应。", "Cross-organ immune interactions": "跨器官免疫互作", "05 — Omics analysis": "05 — 组学分析", "Omics & public-data analysis": "组学与公共数据分析", "GEO data mining": "GEO数据挖掘", "RNA-seq": "RNA-seq", "06 — Gene perturbation": "06 — 基因扰动", "shRNA": "shRNA", "shRNA knockdown": "shRNA敲低", "Methods": "方法", "Research": "研究", "About": "关于我", "Explore my work": "浏览我的内容", "A compact overview first; open only the section you want to explore in depth.": "主页仅保留简要概览；您可以按需进入感兴趣的栏目查看详细内容。", "01 / Experience": "01 / 研究经历", "From molecular biology to tumor immunity and ischemic tissue repair.": "从分子生物学、肿瘤免疫到缺血性组织修复。", "Peer-reviewed work and my contribution to each study.": "同行评议论文，以及我在各项研究中的具体贡献。", "03 / Methods": "03 / 方法与技术", "In vivo, cellular, molecular, protein, omics, and gene-perturbation methods.": "体内、细胞、分子、蛋白、组学及基因扰动相关方法。", "04 / Research": "04 / 研究方向", "Research interests and proposed PhD questions, including cross-organ immunity.": "研究兴趣与博士阶段拟研究问题，包括跨器官免疫互作。", "05 / About": "05 / 关于我", "Education, additional training, scholarships, honors, and English qualifications.": "教育背景、补充训练、奖学金与荣誉，以及英语能力。", "Open page →": "进入页面 →", "Projects that shaped my research trajectory.": "构成我研究轨迹的主要项目。", "My work has progressed from molecular expression analysis to tumor immunology and, currently, immune regulation in ischemic tissue repair.": "我的研究经历从分子表达分析逐步拓展到肿瘤免疫，目前聚焦于缺血性组织修复中的免疫调控。", "Peer-reviewed research and my role in each project.": "已发表的同行评议研究及我在各项目中的具体贡献。", "Methods & tools": "方法与技术", "A structured view of the experimental and analytical approaches I have used.": "按照研究层级整理我已使用的实验与分析方法。", "Research interests & PhD direction": "研究兴趣与博士研究设想", "My long-term research lens and the questions I hope to pursue during doctoral training.": "我的长期研究视角，以及希望在博士阶段继续探索的科学问题。", "01 / Research lens": "01 / 研究视角", "How I frame the problem": "我如何理解这一科学问题", "This section describes the broader logic: tissue context → immune-cell state → tissue outcome.": "这一部分展示我的整体研究逻辑：组织环境 → 免疫细胞状态 → 组织结局。", "02 / Proposed PhD questions": "02 / 博士研究设想", "Questions I hope to explore": "希望继续探索的问题", "These are forward-looking research questions rather than established conclusions.": "以下内容是面向未来的研究问题，而非已经证实的结论。", "Education & honors": "教育背景与荣誉", "Degree education, additional training, scholarships, service recognition, and English qualifications.": "正式学位教育、补充训练、奖学金、志愿服务荣誉及英语能力。", "CET-4 and CET-6 examination records are shown with their complete score breakdowns.": "展示CET-4和CET-6考试成绩及完整分项得分。", "CET-4": "CET-4", "One central question guides my future work: how tissue environments shape immune-cell states, and how local and systemic immune responses influence repair.": "我的未来研究围绕一个核心问题展开：组织环境如何塑造免疫细胞状态，以及局部与全身性免疫反应如何共同影响组织修复。", "How injury-associated cues reshape immune-cell composition and function.": "损伤相关信号如何重塑免疫细胞组成与功能。", "How immune states emerge, transition, and acquire tissue-specific functions.": "免疫细胞状态如何形成、转换并获得组织特异性功能。", "03 — CROSS-ORGAN": "03 — 跨器官", "Cross-organ immunity": "跨器官免疫", "Whether local injury can trigger coordinated immune responses in distant tissues.": "局部损伤是否能够触发远端组织中的协同免疫反应。", "04 — OUTCOME": "04 — 组织结局", "Repair & regeneration": "修复与再生", "How local and systemic immune regulation shapes vascular and tissue recovery.": "局部与全身性免疫调控如何影响血管及组织恢复。", "PhD focus": "博士研究重点", "From local immune states to tissue-level outcomes": "从局部免疫状态到组织层面结局", "My proposed PhD direction is to connect single-cell state transitions with tissue interactions and, where relevant, cross-organ immune communication. These are future research questions rather than established conclusions.": "我希望在博士阶段将单细胞状态转换与组织相互作用联系起来，并在适当情况下进一步探索跨器官免疫通讯。这些内容属于未来研究问题，而非既定结论。"};
+  const records = [];
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  while (walker.nextNode()) {
+    const node = walker.currentNode;
+    const raw = node.nodeValue;
+    const trimmed = raw.trim();
+    if (!trimmed || !Object.prototype.hasOwnProperty.call(translations, trimmed)) continue;
+    const lead = raw.slice(0, raw.indexOf(trimmed));
+    const tail = raw.slice(raw.indexOf(trimmed) + trimmed.length);
+    records.push({node, en: trimmed, zh: translations[trimmed], lead, tail});
+  }
+
+  const buttons = [...document.querySelectorAll('[data-lang-btn]')];
+  function setLanguage(lang) {
+    records.forEach(r => {
+      r.node.nodeValue = r.lead + (lang === 'zh' ? r.zh : r.en) + r.tail;
+    });
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    buttons.forEach(btn => {
+      const active = btn.dataset.langBtn === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    try { localStorage.setItem('portfolio-language', lang); } catch (e) {}
+  }
+
+  buttons.forEach(btn => btn.addEventListener('click', () => setLanguage(btn.dataset.langBtn)));
+  let savedLang = 'en'; try { savedLang = localStorage.getItem('portfolio-language') === 'zh' ? 'zh' : 'en'; } catch (e) {} setLanguage(savedLang);
+})();
+</script>
+
+</body>
+</html>

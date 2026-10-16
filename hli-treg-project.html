@@ -458,6 +458,360 @@ header{
   .lang-switch button{padding:5px 7px;font-size:9px}
 }
 
+
+/* v16 — multipage academic portfolio */
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,
+  "PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;
+}
+.hero h1,.page-intro h1,.portal-card h2,.contact h2,
+.direction-question h3,.experience-topline h3{
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+}
+.hero h1{font-size:clamp(50px,6.5vw,78px);letter-spacing:-.055em}
+.section-head p{font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif}
+.tag{
+  text-transform:none !important;
+  letter-spacing:.015em !important;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif !important;
+}
+.navlinks a.active{color:var(--accent)}
+.page-intro{
+  padding:82px 0 48px;
+  border-bottom:1px solid var(--line);
+  max-width:900px;
+}
+.page-intro .eyebrow{margin-bottom:16px}
+.page-intro h1{
+  margin:0 0 18px;
+  font-size:clamp(42px,5.4vw,66px);
+  line-height:1.02;
+  letter-spacing:-.045em;
+  font-weight:500;
+}
+.page-intro p{
+  margin:0;
+  max-width:760px;
+  color:#c5c1b9;
+  font-size:16px;
+  line-height:1.75;
+}
+.portal-section{padding:52px 0 74px;border-bottom:1px solid var(--line)}
+.portal-head{
+  display:flex;justify-content:space-between;gap:25px;align-items:end;
+  margin-bottom:22px;
+}
+.portal-head h2{
+  margin:0;font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:28px;font-weight:500;letter-spacing:-.03em;
+}
+.portal-head p{margin:0;color:var(--muted);font-size:12px;max-width:440px}
+.portal-grid{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+}
+.portal-card{
+  display:block;min-height:185px;padding:23px;
+  background:linear-gradient(180deg,#191918,#151514);
+  border:1px solid var(--line);position:relative;
+  transition:transform .2s ease,border-color .2s ease;
+}
+.portal-card:hover{transform:translateY(-3px);border-color:#6a5d50;color:inherit}
+.portal-card .portal-label{
+  color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:25px;
+}
+.portal-card h2{
+  margin:0 0 9px;font-size:25px;font-weight:500;line-height:1.15;letter-spacing:-.025em;
+}
+.portal-card p{margin:0;color:var(--muted);font-size:12px;line-height:1.65;max-width:430px}
+.portal-card .arrow{
+  position:absolute;right:20px;top:20px;color:var(--accent);font-size:17px;
+}
+.content-section{padding:48px 0 74px;border-bottom:1px solid var(--line)}
+.content-section > .section{padding-top:0;border-bottom:0}
+.subsection{
+  padding:48px 0;border-bottom:1px solid var(--line)
+}
+.subsection:last-child{border-bottom:0}
+.subsection-kicker{
+  color:var(--accent);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px
+}
+.subsection h2{
+  margin:0 0 22px;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:30px;font-weight:500;letter-spacing:-.03em
+}
+.subsection .subnote{margin:-10px 0 24px;color:var(--muted);font-size:12px;max-width:720px}
+@media(max-width:860px){
+  .portal-grid{grid-template-columns:1fr}
+  .navlinks{gap:13px}
+}
+@media(max-width:720px){
+  .navlinks{
+    max-width:calc(100vw - 155px);
+    overflow-x:auto;white-space:nowrap;scrollbar-width:none
+  }
+  .navlinks::-webkit-scrollbar{display:none}
+  .portal-head{display:block}
+  .portal-head p{margin-top:8px}
+}
+
+
+/* v17 — project progress status */
+.progress-summary{
+  margin:18px 0 0;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.progress-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  padding:6px 9px;
+  border:1px solid var(--line);
+  background:#171716;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9.5px;
+  letter-spacing:.05em;
+}
+.progress-pill.completed{color:#abc39d}
+.progress-pill.ongoing{color:var(--accent)}
+.status-badge{
+  position:absolute;
+  top:17px;
+  right:18px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:5px 8px;
+  border:1px solid #3c3a35;
+  background:#151514;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9px;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.status-badge.completed{color:#abc39d}
+.status-badge.ongoing{color:var(--accent)}
+.status-badge .status-symbol{
+  font-size:11px;
+  line-height:1;
+}
+.flow-card.has-status,
+.flow-wide.has-status{
+  padding-top:52px;
+}
+.flow-wide.ongoing-card{
+  border-style:dashed;
+  border-color:#665d53;
+}
+.flow-wide.ongoing-card::after{
+  content:"";
+  position:absolute;
+  left:0;top:0;bottom:0;width:2px;
+  background:var(--accent);
+  opacity:.7;
+}
+.progress-legend{
+  margin-top:18px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  color:var(--muted);
+  font-size:10px;
+}
+.progress-legend span{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+}
+.progress-legend .done-mark{color:#abc39d}
+.progress-legend .ongoing-mark{color:var(--accent)}
+@media(max-width:620px){
+  .status-badge{
+    position:static;
+    margin-bottom:12px;
+    width:max-content;
+  }
+  .flow-card.has-status,
+  .flow-wide.has-status{
+    padding-top:20px;
+  }
+}
+
+
+/* v18 — boss-friendly / skim-first */
+:root{--max:1080px}
+body{line-height:1.55}
+.wrap{max-width:var(--max);padding:0 34px}
+.hero{padding:72px 0 64px;gap:54px}
+.hero h1{font-size:clamp(50px,6vw,74px);margin-bottom:20px}
+.lead{font-size:16px;line-height:1.6;max-width:620px}
+.section,.content-section{padding-top:46px;padding-bottom:54px}
+.page-intro{padding:66px 0 34px}
+.page-intro h1{font-size:clamp(38px,4.8vw,56px);margin-bottom:12px}
+.page-intro p{font-size:14px;max-width:700px}
+.section-head{margin-bottom:22px}
+.section-head p{font-size:17px}
+.portal-section{padding:40px 0 58px}
+.portal-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.portal-card{min-height:150px;padding:19px}
+.portal-card .portal-label{margin-bottom:18px}
+.portal-card h2{font-size:21px}
+.portal-card p{font-size:11.5px}
+.quick-strip{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;
+  margin:24px 0 0;
+}
+.quick-item{
+  border-top:1px solid var(--line);padding-top:11px;
+}
+.quick-item strong{
+  display:block;font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px
+}
+.quick-item span{font-size:10.5px;color:var(--muted);line-height:1.4}
+.experience-item{padding-top:24px;padding-bottom:24px}
+.experience-desc{font-size:12px!important;line-height:1.6!important}
+.experience-preview{max-height:185px}
+.tags{margin-top:9px}
+.tag{font-size:8.5px;padding:3px 7px}
+.methods-grid{gap:9px}
+.method-group{min-height:120px;padding:17px}
+.method-group h3{font-size:14px;margin-bottom:9px}
+.method-tags span{font-size:9.5px;padding:4px 7px}
+.pub{padding:16px 0}
+.pub h3{font-size:13px;line-height:1.55}
+.degree-item{padding:16px 0}
+.subsection{padding:34px 0}
+.subsection h2{font-size:26px;margin-bottom:16px}
+.research-grid{gap:9px}
+.research-card{min-height:155px;padding:19px}
+.research-card .card-num{margin-bottom:16px}
+.research-card h3{font-size:15px}
+.research-card p{font-size:11.5px}
+.direction-grid{gap:9px}
+.direction-card{min-height:175px;padding:19px}
+.direction-card h3{font-size:15px!important}
+.direction-card p{font-size:11.5px!important}
+.contact{padding-top:58px;padding-bottom:64px}
+.contact h2{font-size:clamp(36px,4.8vw,56px)}
+.life-collage{grid-template-rows:180px 190px}
+@media(max-width:900px){
+  .portal-grid{grid-template-columns:1fr 1fr}
+  .quick-strip{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .portal-grid,.quick-strip{grid-template-columns:1fr}
+}
+
+
+/* v19 — framework-first project pages */
+.framework-brief{
+  padding:46px 0 50px;
+  border-bottom:1px solid var(--line);
+}
+.framework-brief-head{
+  display:grid;
+  grid-template-columns:165px minmax(0,1fr);
+  gap:28px;
+  align-items:start;
+  margin-bottom:22px;
+}
+.framework-brief-head .label{
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.framework-brief-head h2{
+  margin:0;
+  font-family:Georgia,"Times New Roman","Noto Serif SC","Songti SC",serif;
+  font-size:27px;
+  font-weight:500;
+  letter-spacing:-.025em;
+  line-height:1.25;
+}
+.framework-track{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:9px;
+}
+.framework-node{
+  position:relative;
+  border:1px solid var(--line);
+  background:#171716;
+  padding:18px;
+  min-height:145px;
+}
+.framework-node .step{
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:9px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  margin-bottom:12px;
+}
+.framework-node h3{
+  margin:0 0 7px;
+  font-size:14.5px;
+  font-weight:600;
+  line-height:1.35;
+}
+.framework-node p{
+  margin:0;
+  color:var(--muted);
+  font-size:11.5px;
+  line-height:1.55;
+}
+.framework-node + .framework-node::before{
+  content:"→";
+  position:absolute;
+  left:-10px;
+  top:50%;
+  transform:translate(-50%,-50%);
+  color:var(--accent);
+  background:var(--bg);
+  padding:2px 4px;
+  font-size:12px;
+}
+.role-brief{
+  padding:38px 0 42px;
+  border-bottom:1px solid var(--line);
+  display:grid;
+  grid-template-columns:165px minmax(0,1fr);
+  gap:28px;
+}
+.role-brief .label{
+  color:var(--accent);
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+}
+.role-brief p{
+  margin:0;
+  max-width:760px;
+  color:#bbb7af;
+  font-size:13px;
+  line-height:1.7;
+}
+.image-wrap.figure-medium{
+  max-width:620px;
+}
+.image-wrap.figure-small{
+  max-width:590px;
+}
+@media(max-width:760px){
+  .framework-brief-head,.role-brief{grid-template-columns:1fr;gap:8px}
+  .framework-track{grid-template-columns:1fr}
+  .framework-node + .framework-node::before{display:none}
+  .image-wrap.figure-medium,.image-wrap.figure-small{max-width:100%}
+}
+
 </style>
 </head>
 <body>
@@ -466,8 +820,8 @@ header{
     <a class="brand" href="index.html">QY<span style="color:var(--accent)">.</span></a>
     <div class="nav-right"><nav class="navlinks">
       <a href="index.html">Home</a>
+      <a href="experience.html">Experience</a>
       <a href="#framework">Framework</a>
-      <a href="#strategy">Strategy</a>
       <a href="#contribution">My role</a>
     </nav><div class="lang-switch" aria-label="Language switch">
       <button type="button" data-lang-btn="en" class="active" aria-pressed="true">EN</button>
@@ -476,53 +830,28 @@ header{
   </div>
 </header>
 
+
+
 <main>
 <div class="wrap">
 
 <section class="project-hero">
-  <a class="backlink" href="index.html">← Back to portfolio</a>
-  <div class="eyebrow" style="margin-top:30px">Ongoing Research | Tissue Repair &amp; Immune Regulation</div>
+  <a class="backlink" href="experience.html">← Back to experience</a>
+  <div class="eyebrow" style="margin-top:26px">Primary project · Ongoing</div>
   <h1>Treg remodeling in ischemic tissue.</h1>
-  <p class="project-intro">
-    How does the ischemic microenvironment shape regulatory T-cell states and their potential roles in tissue repair?
-    My current work uses a mouse hindlimb ischemia model together with single-cell profiling and functional validation
-    to investigate this question.
-  </p>
-  <div class="status-row">
-    <span class="status"><strong>FOCUS:</strong> Treg biology · tissue regeneration</span>
-    <span class="status"><strong>ONGOING:</strong> Master’s research</span>
-    <span class="status"><strong>UNPUBLISHED:</strong> Selected results withheld</span>
+  <p class="project-intro">How does the ischemic microenvironment reshape Treg states, and how might these states contribute to tissue repair?</p>
+  <div class="progress-summary">
+    <span class="progress-pill completed"><span>✓</span> Model</span>
+    <span class="progress-pill completed"><span>✓</span> Single-cell profiling</span>
+    <span class="progress-pill completed"><span>✓</span> Functional validation</span>
+    <span class="progress-pill ongoing"><span>○</span> Mechanistic exploration</span>
   </div>
-  <p class="scope"><strong>My contribution:</strong> I established and performed the mouse hindlimb ischemia model, coordinated ischemic-tissue collection and immune characterization, and contributed to single-cell transcriptomic and scTCR-seq analyses. Follow-up work includes CRISPR-based perturbation, molecular assays, and functional validation of selected Treg populations.</p>
-
-  <nav class="section-index" aria-label="Project sections">
-    <a href="#framework">
-      <span class="idx">01</span>
-      <span class="idx-title">Research framework</span>
-      <span class="idx-sub">Question &amp; study design</span>
-    </a>
-    <a href="#strategy">
-      <span class="idx">02</span>
-      <span class="idx-title">Experimental strategy</span>
-      <span class="idx-sub">Model · profiling · validation</span>
-    </a>
-    <a href="#contribution">
-      <span class="idx">03</span>
-      <span class="idx-title">My role</span>
-      <span class="idx-sub">Primary project contribution</span>
-    </a>
-    <a href="#methods">
-      <span class="idx">04</span>
-      <span class="idx-title">Methods demonstrated</span>
-      <span class="idx-sub">Experimental &amp; analytical skills</span>
-    </a>
-  </nav>
 </section>
 
 <section class="section" id="framework">
   <div class="section-head">
     <h2>01 / Research framework</h2>
-    <p>The public version of this project emphasizes the scientific question and study design while intentionally withholding unpublished quantitative findings.</p>
+    <p>The core model, profiling, and validation stages are complete. Mechanistic exploration is ongoing.</p>
   </div>
 
   <div class="framework-shell">
@@ -535,114 +864,63 @@ header{
     <div class="flow-connector"></div>
 
     <div class="flow-grid">
-      <article class="flow-card">
+      <article class="flow-card has-status">
+        <div class="status-badge completed"><span class="status-symbol">✓</span> Completed</div>
         <div class="flow-step">01 · In vivo model</div>
         <h4>Hindlimb ischemia &amp; tissue collection</h4>
-        <p>Establish the mouse HLI model and collect ischemic tissues for downstream immune and molecular analyses.</p>
+        <p>Establish the mouse HLI model and collect ischemic tissues for downstream immune analysis.</p>
       </article>
 
-      <article class="flow-card">
+      <article class="flow-card has-status">
+        <div class="status-badge completed"><span class="status-symbol">✓</span> Completed</div>
         <div class="flow-step">02 · Single-cell profiling</div>
         <h4>scRNA-seq &amp; scTCR-seq</h4>
-        <p>Characterize Treg heterogeneity, transcriptional states, and clonal features in the ischemic microenvironment.</p>
+        <p>Characterize Treg heterogeneity, transcriptional states, and clonal features.</p>
       </article>
     </div>
 
     <div class="flow-connector"></div>
 
-    <article class="flow-wide">
+    <article class="flow-wide has-status">
+      <div class="status-badge completed"><span class="status-symbol">✓</span> Completed</div>
       <div class="flow-step">03 · Phenotypic &amp; functional validation</div>
       <h4>Validate candidate Treg states</h4>
-      <p>Flow cytometry · cell sorting · CRISPR-based approaches · molecular and functional assays</p>
+      <p>Flow cytometry · cell sorting · molecular and functional assays</p>
     </article>
 
     <div class="flow-connector"></div>
 
-    <article class="flow-wide">
+    <article class="flow-wide has-status ongoing-card">
+      <div class="status-badge ongoing"><span class="status-symbol">○</span> Ongoing</div>
       <div class="flow-step">04 · Mechanistic investigation</div>
       <h4>Define regulatory signals linked to tissue repair</h4>
-      <p>Investigate signals that regulate Treg states and test how selected pathways may contribute to repair-related functions.</p>
+      <p>Test candidate mechanisms that may connect Treg state regulation with repair-related functions.</p>
     </article>
 
     <div class="framework-footer">
       <div class="note-label">Unpublished work</div>
-      <p>Selected quantitative results, differential-expression findings, and mechanistic conclusions are intentionally omitted from this public portfolio while the study is ongoing.</p>
+      <p>Selected quantitative findings and mechanistic conclusions remain unpublished and are intentionally not shown here.</p>
     </div>
   </div>
 </section>
 
-<section class="section" id="strategy">
-  <div class="section-head">
-    <h2>02 / Experimental strategy</h2>
-    <p>A multi-scale workflow connecting animal modeling, immune profiling, single-cell analysis, and functional perturbation.</p>
-  </div>
-
-  <div class="method-grid">
-    <article class="method-card">
-      <div class="num">01 — MODEL</div>
-      <h3>Hindlimb ischemia</h3>
-      <p>Lower-limb vascular dissection and ligation, followed by ischemic-tissue collection for downstream analysis.</p>
-    </article>
-    <article class="method-card">
-      <div class="num">02 — PROFILING</div>
-      <h3>Single-cell analysis</h3>
-      <p>scRNA-seq and scTCR-seq to examine Treg state heterogeneity and clonotype structure without displaying unpublished result-level data.</p>
-    </article>
-    <article class="method-card">
-      <div class="num">03 — PHENOTYPING</div>
-      <h3>Immune characterization</h3>
-      <p>Flow cytometry and cell sorting to define tissue-associated immune populations and support downstream functional studies.</p>
-    </article>
-    <article class="method-card">
-      <div class="num">04 — VALIDATION</div>
-      <h3>Functional perturbation</h3>
-      <p>CRISPR-based approaches, molecular assays, and functional experiments to test candidate regulatory pathways.</p>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="contribution">
-  <div class="section-head">
-    <h2>03 / My role</h2>
-    <p>This project is my primary ongoing research experience and demonstrates both experimental execution and integrative analysis.</p>
-  </div>
-
-  <div class="contrib-list">
-    <div class="contrib-item">
-      <div class="label">Animal model</div>
-      <div>Established and performed the mouse hindlimb ischemia model and coordinated tissue collection.</div>
-    </div>
-    <div class="contrib-item">
-      <div class="label">Immune profiling</div>
-      <div>Performed tissue immune characterization using flow cytometry and related downstream assays.</div>
-    </div>
-    <div class="contrib-item">
-      <div class="label">Single-cell</div>
-      <div>Participated in scRNA-seq and scTCR-seq analysis to characterize Treg states and clonotype patterns.</div>
-    </div>
-    <div class="contrib-item">
-      <div class="label">Validation</div>
-      <div>Conducted follow-up CRISPR-based perturbation, molecular assays, and functional validation of selected cell populations.</div>
-    </div>
-  </div>
+<section class="role-brief" id="contribution">
+  <div class="label">02 / My role</div>
+  <p>I led the animal model and tissue workflow, performed immune characterization, contributed to single-cell analysis, and carried out downstream functional validation.</p>
 </section>
 
 <section class="section" id="methods">
   <div class="section-head">
-    <h2>04 / Methods demonstrated</h2>
-    <p>Core techniques and analytical approaches represented by this project.</p>
+    <h2>03 / Methods demonstrated</h2>
+    <p>Methods are kept concise because they are already embedded in the framework above.</p>
   </div>
   <div class="skills">
     <span class="skill">Hindlimb ischemia surgery</span>
-    <span class="skill">Tissue dissection</span>
     <span class="skill">Flow cytometry</span>
     <span class="skill">Cell sorting</span>
     <span class="skill">scRNA-seq</span>
     <span class="skill">scTCR-seq</span>
-    <span class="skill">Seurat / R</span>
-    <span class="skill">CRISPR-Cas9</span>
     <span class="skill">Molecular assays</span>
-    <span class="skill">Functional assays</span>
   </div>
 </section>
 
@@ -651,13 +929,14 @@ header{
   <span>Ongoing unpublished research</span>
   <a href="index.html">Portfolio ↑</a>
 </footer>
-
 </div>
 </main>
 
+
+
 <script>
 (() => {
-  const translations = {"Home": "主页", "Framework": "研究框架", "Strategy": "研究策略", "My role": "我的职责", "← Back to portfolio": "← 返回个人主页", "Ongoing Research | Tissue Repair & Immune Regulation": "进行中研究 | 组织修复与免疫调控", "Treg remodeling in ischemic tissue.": "缺血组织中的Treg重塑", "How does the ischemic microenvironment shape regulatory T-cell states and their potential roles in tissue repair? My current work uses a mouse hindlimb ischemia model together with single-cell profiling and functional validation to investigate this question.": "缺血微环境如何塑造调节性T细胞的状态，并影响其潜在的组织修复功能？我目前结合小鼠后肢缺血模型、单细胞分析与功能验证来研究这一问题。", "FOCUS:": "重点：", "Treg biology · tissue regeneration": "Treg生物学 · 组织再生", "ONGOING:": "进行中：", "Master’s research": "硕士课题", "UNPUBLISHED:": "未发表：", "Selected results withheld": "部分结果暂不公开", "My contribution:": "我的贡献：", "I established and performed the mouse hindlimb ischemia model, coordinated ischemic-tissue collection and immune characterization, and contributed to single-cell transcriptomic and scTCR-seq analyses. Follow-up work includes CRISPR-based perturbation, molecular assays, and functional validation of selected Treg populations.": "我建立并实施小鼠后肢缺血模型，统筹缺血组织采集与免疫表型分析，并参与单细胞转录组和scTCR-seq分析。后续工作包括基于CRISPR的扰动实验、分子检测及对特定Treg群体的功能验证。", "01": "01", "Research framework": "研究框架", "Question & study design": "科学问题与研究设计", "02": "02", "Experimental strategy": "实验策略", "Model · profiling · validation": "模型 · 分析 · 验证", "03": "03", "Primary project contribution": "核心项目贡献", "04": "04", "Methods demonstrated": "技术能力", "Experimental & analytical skills": "实验与分析技能", "01 / Research framework": "01 / 研究框架", "The public version of this project emphasizes the scientific question and study design while intentionally withholding unpublished quantitative findings.": "公开页面重点展示科学问题与研究设计，未发表的定量结果暂不公开。", "Research question": "科学问题", "Treg remodeling in ischemic tissue": "缺血组织中的Treg重塑", "How does the ischemic microenvironment shape Treg states and their potential roles in tissue repair?": "缺血微环境如何塑造Treg状态及其潜在的组织修复功能？", "01 · In vivo model": "01 · 体内模型", "Hindlimb ischemia & tissue collection": "后肢缺血模型与组织采集", "Establish the mouse HLI model and collect ischemic tissues for downstream immune and molecular analyses.": "建立小鼠HLI模型并采集缺血组织，用于后续免疫学与分子分析。", "02 · Single-cell profiling": "02 · 单细胞分析", "scRNA-seq & scTCR-seq": "scRNA-seq 与 scTCR-seq", "Characterize Treg heterogeneity, transcriptional states, and clonal features in the ischemic microenvironment.": "解析缺血微环境中Treg的异质性、转录状态及克隆特征。", "03 · Phenotypic & functional validation": "03 · 表型与功能验证", "Validate candidate Treg states": "验证候选Treg状态", "Flow cytometry · cell sorting · CRISPR-based approaches · molecular and functional assays": "流式细胞术 · 细胞分选 · CRISPR相关方法 · 分子与功能实验", "04 · Mechanistic investigation": "04 · 机制研究", "Define regulatory signals linked to tissue repair": "解析与组织修复相关的调控信号", "Investigate signals that regulate Treg states and test how selected pathways may contribute to repair-related functions.": "研究调控Treg状态的信号，并验证候选通路如何影响修复相关功能。", "Unpublished work": "未发表工作", "Selected quantitative results, differential-expression findings, and mechanistic conclusions are intentionally omitted from this public portfolio while the study is ongoing.": "由于研究仍在进行，公开页面暂不展示定量结果、差异表达结果及具体机制结论。", "02 / Experimental strategy": "02 / 实验策略", "A multi-scale workflow connecting animal modeling, immune profiling, single-cell analysis, and functional perturbation.": "将动物模型、免疫表型、单细胞分析与功能扰动相结合的多层次研究流程。", "01 — MODEL": "01 — 模型", "Hindlimb ischemia": "后肢缺血", "Lower-limb vascular dissection and ligation, followed by ischemic-tissue collection for downstream analysis.": "进行下肢血管分离与结扎，并采集缺血组织用于后续分析。", "02 — PROFILING": "02 — 分析", "Single-cell analysis": "单细胞分析", "scRNA-seq and scTCR-seq to examine Treg state heterogeneity and clonotype structure without displaying unpublished result-level data.": "利用scRNA-seq和scTCR-seq分析Treg状态异质性和克隆型结构，公开页面不展示未发表的具体结果。", "03 — PHENOTYPING": "03 — 表型", "Immune characterization": "免疫表型分析", "Flow cytometry and cell sorting to define tissue-associated immune populations and support downstream functional studies.": "通过流式细胞术和细胞分选界定组织相关免疫细胞群，并支持后续功能研究。", "04 — VALIDATION": "04 — 验证", "Functional perturbation": "功能扰动", "CRISPR-based approaches, molecular assays, and functional experiments to test candidate regulatory pathways.": "通过CRISPR相关方法、分子实验和功能实验验证候选调控通路。", "03 / My role": "03 / 我的职责", "This project is my primary ongoing research experience and demonstrates both experimental execution and integrative analysis.": "该项目是我目前最核心的在研课题，体现了我在实验实施与整合分析方面的能力。", "Animal model": "动物模型", "Established and performed the mouse hindlimb ischemia model and coordinated tissue collection.": "建立并实施小鼠后肢缺血模型，并协调组织采集。", "Immune profiling": "免疫表型", "Performed tissue immune characterization using flow cytometry and related downstream assays.": "使用流式细胞术及相关下游实验进行组织免疫表型分析。", "Single-cell": "单细胞", "Participated in scRNA-seq and scTCR-seq analysis to characterize Treg states and clonotype patterns.": "参与scRNA-seq和scTCR-seq分析，以解析Treg状态及克隆型模式。", "Validation": "验证", "Conducted follow-up CRISPR-based perturbation, molecular assays, and functional validation of selected cell populations.": "开展后续CRISPR相关扰动、分子实验及特定细胞群的功能验证。", "04 / Methods demonstrated": "04 / 技术能力", "Core techniques and analytical approaches represented by this project.": "该项目所涉及的核心实验技术与分析方法。", "Hindlimb ischemia surgery": "后肢缺血手术", "Tissue dissection": "组织分离", "Cell sorting": "细胞分选", "Seurat / R": "Seurat / R", "Molecular assays": "分子实验", "Functional assays": "功能实验", "Portfolio ↑": "个人主页 ↑", "Ongoing unpublished research": "进行中的未发表研究"};
+  const translations = {"Home": "主页", "Framework": "研究框架", "Strategy": "研究策略", "My role": "我的职责", "← Back to portfolio": "← 返回个人主页", "Ongoing Research | Tissue Repair & Immune Regulation": "进行中研究 | 组织修复与免疫调控", "Treg remodeling in ischemic tissue.": "缺血组织中的Treg重塑", "How does the ischemic microenvironment shape regulatory T-cell states and their potential roles in tissue repair? My current work uses a mouse hindlimb ischemia model together with single-cell profiling and functional validation to investigate this question.": "缺血微环境如何塑造调节性T细胞的状态，并影响其潜在的组织修复功能？我目前结合小鼠后肢缺血模型、单细胞分析与功能验证来研究这一问题。", "FOCUS:": "重点：", "Treg biology · tissue regeneration": "Treg生物学 · 组织再生", "ONGOING:": "进行中：", "Master’s research": "硕士课题", "UNPUBLISHED:": "未发表：", "Selected results withheld": "部分结果暂不公开", "My contribution:": "我的贡献：", "I established and performed the mouse hindlimb ischemia model, coordinated ischemic-tissue collection and immune characterization, and contributed to single-cell transcriptomic and scTCR-seq analyses. Follow-up work includes CRISPR-based perturbation, molecular assays, and functional validation of selected Treg populations.": "我建立并实施小鼠后肢缺血模型，统筹缺血组织采集与免疫表型分析，并参与单细胞转录组和scTCR-seq分析。后续工作包括基于CRISPR的扰动实验、分子检测及对特定Treg群体的功能验证。", "01": "01", "Research framework": "研究框架", "Question & study design": "科学问题与研究设计", "02": "02", "Experimental strategy": "实验策略", "Model · profiling · validation": "模型 · 分析 · 验证", "03": "03", "Primary project contribution": "核心项目贡献", "04": "04", "Methods demonstrated": "技术能力", "Experimental & analytical skills": "实验与分析技能", "01 / Research framework": "01 / 研究框架", "The core model, profiling, and validation stages are complete. Mechanistic exploration is ongoing, while unpublished quantitative findings remain intentionally withheld.": "核心模型、组学分析及验证阶段已完成；机制探索仍在进行中，未发表的定量结果仍暂不公开。", "Research question": "科学问题", "Treg remodeling in ischemic tissue": "缺血组织中的Treg重塑", "How does the ischemic microenvironment shape Treg states and their potential roles in tissue repair?": "缺血微环境如何塑造Treg状态及其潜在的组织修复功能？", "01 · In vivo model": "01 · 体内模型", "Hindlimb ischemia & tissue collection": "后肢缺血模型与组织采集", "Establish the mouse HLI model and collect ischemic tissues for downstream immune and molecular analyses.": "建立小鼠HLI模型并采集缺血组织，用于后续免疫学与分子分析。", "02 · Single-cell profiling": "02 · 单细胞分析", "scRNA-seq & scTCR-seq": "scRNA-seq 与 scTCR-seq", "Characterize Treg heterogeneity, transcriptional states, and clonal features in the ischemic microenvironment.": "解析缺血微环境中Treg的异质性、转录状态及克隆特征。", "03 · Phenotypic & functional validation": "03 · 表型与功能验证", "Validate candidate Treg states": "验证候选Treg状态", "Flow cytometry · cell sorting · CRISPR-based approaches · molecular and functional assays": "流式细胞术 · 细胞分选 · CRISPR相关方法 · 分子与功能实验", "04 · Mechanistic investigation": "04 · 机制研究", "Define regulatory signals linked to tissue repair": "解析与组织修复相关的调控信号", "Investigate signals that regulate Treg states and test how selected pathways may contribute to repair-related functions.": "研究调控Treg状态的信号，并验证候选通路如何影响修复相关功能。", "Unpublished work": "未发表工作", "Selected quantitative results, differential-expression findings, and mechanistic conclusions are intentionally omitted from this public portfolio while the study is ongoing.": "由于研究仍在进行，公开页面暂不展示定量结果、差异表达结果及具体机制结论。", "02 / Experimental strategy": "02 / 实验策略", "A multi-scale workflow connecting animal modeling, immune profiling, single-cell analysis, and functional perturbation.": "将动物模型、免疫表型、单细胞分析与功能扰动相结合的多层次研究流程。", "01 — MODEL": "01 — 模型", "Hindlimb ischemia": "后肢缺血", "Lower-limb vascular dissection and ligation, followed by ischemic-tissue collection for downstream analysis.": "进行下肢血管分离与结扎，并采集缺血组织用于后续分析。", "02 — PROFILING": "02 — 分析", "Single-cell analysis": "单细胞分析", "scRNA-seq and scTCR-seq to examine Treg state heterogeneity and clonotype structure without displaying unpublished result-level data.": "利用scRNA-seq和scTCR-seq分析Treg状态异质性和克隆型结构，公开页面不展示未发表的具体结果。", "03 — PHENOTYPING": "03 — 表型", "Immune characterization": "免疫表型分析", "Flow cytometry and cell sorting to define tissue-associated immune populations and support downstream functional studies.": "通过流式细胞术和细胞分选界定组织相关免疫细胞群，并支持后续功能研究。", "04 — VALIDATION": "04 — 验证", "Functional perturbation": "功能扰动", "CRISPR-based approaches, molecular assays, and functional experiments to test candidate regulatory pathways.": "通过CRISPR相关方法、分子实验和功能实验验证候选调控通路。", "03 / My role": "03 / 我的职责", "This project is my primary ongoing research experience and demonstrates both experimental execution and integrative analysis.": "该项目是我目前最核心的在研课题，体现了我在实验实施与整合分析方面的能力。", "Animal model": "动物模型", "Established and performed the mouse hindlimb ischemia model and coordinated tissue collection.": "建立并实施小鼠后肢缺血模型，并协调组织采集。", "Immune profiling": "免疫表型", "Performed tissue immune characterization using flow cytometry and related downstream assays.": "使用流式细胞术及相关下游实验进行组织免疫表型分析。", "Single-cell": "单细胞", "Participated in scRNA-seq and scTCR-seq analysis to characterize Treg states and clonotype patterns.": "参与scRNA-seq和scTCR-seq分析，以解析Treg状态及克隆型模式。", "Validation": "验证", "Conducted follow-up CRISPR-based perturbation, molecular assays, and functional validation of selected cell populations.": "开展后续CRISPR相关扰动、分子实验及特定细胞群的功能验证。", "04 / Methods demonstrated": "04 / 技术能力", "Core techniques and analytical approaches represented by this project.": "该项目所涉及的核心实验技术与分析方法。", "Hindlimb ischemia surgery": "后肢缺血手术", "Tissue dissection": "组织分离", "Cell sorting": "细胞分选", "Seurat / R": "Seurat / R", "Molecular assays": "分子实验", "Functional assays": "功能实验", "Portfolio ↑": "个人主页 ↑", "Ongoing unpublished research": "进行中的未发表研究", "Methods": "技术方法", "Research": "研究", "About": "关于我", "Explore my work": "浏览我的内容", "A compact overview first; open only the section you want to explore in depth.": "主页仅保留简要概览；您可以按需进入感兴趣的栏目查看详细内容。", "01 / Experience": "01 / 研究经历", "From molecular biology to tumor immunity and ischemic tissue repair.": "从分子生物学、肿瘤免疫到缺血性组织修复。", "02 / Publications": "02 / 论文发表", "Peer-reviewed work and my contribution to each study.": "同行评议论文，以及我在各项研究中的具体贡献。", "03 / Methods": "03 / 方法与技术", "In vivo, cellular, molecular, protein, omics, and gene-perturbation methods.": "体内、细胞、分子、蛋白、组学及基因扰动相关方法。", "04 / Research": "04 / 研究方向", "Research interests and proposed PhD questions, including cross-organ immunity.": "研究兴趣与博士阶段拟研究问题，包括跨器官免疫互作。", "05 / About": "05 / 关于我", "Education, additional training, scholarships, honors, and English qualifications.": "教育背景、补充训练、奖学金与荣誉，以及英语能力。", "Open page →": "进入页面 →", "Research experience": "研究经历", "Projects that shaped my research trajectory.": "构成我研究轨迹的主要项目。", "My work has progressed from molecular expression analysis to tumor immunology and, currently, immune regulation in ischemic tissue repair.": "我的研究经历从分子表达分析逐步拓展到肿瘤免疫，目前聚焦于缺血性组织修复中的免疫调控。", "Publications": "论文发表", "Peer-reviewed research and my role in each project.": "已发表的同行评议研究及我在各项目中的具体贡献。", "Methods & tools": "方法与技术", "A structured view of the experimental and analytical approaches I have used.": "按照研究层级整理我已使用的实验与分析方法。", "Research interests & PhD direction": "研究兴趣与博士研究设想", "My long-term research lens and the questions I hope to pursue during doctoral training.": "我的长期研究视角，以及希望在博士阶段继续探索的科学问题。", "01 / Research lens": "01 / 研究视角", "How I frame the problem": "我如何理解这一科学问题", "This section describes the broader logic: tissue context → immune-cell state → tissue outcome.": "这一部分展示我的整体研究逻辑：组织环境 → 免疫细胞状态 → 组织结局。", "02 / Proposed PhD questions": "02 / 博士研究设想", "Questions I hope to explore": "希望继续探索的问题", "These are forward-looking research questions rather than established conclusions.": "以下内容是面向未来的研究问题，而非已经证实的结论。", "Education & honors": "教育背景与荣誉", "Degree education, additional training, scholarships, service recognition, and English qualifications.": "正式学位教育、补充训练、奖学金、志愿服务荣誉及英语能力。", "CET-4 and CET-6 examination records are shown with their complete score breakdowns.": "展示CET-4和CET-6考试成绩及完整分项得分。", "CET-4": "CET-4", "Experience": "研究经历", "← Back to experience": "← 返回研究经历", "Back to experience ←": "返回研究经历 ←", "Core workflow completed": "核心研究流程已完成", "Mechanistic exploration ongoing": "机制探索进行中", "Completed": "已完成", "Ongoing": "进行中", "Completed work": "已完成部分", "Ongoing work": "进行中部分", "Primary project · Ongoing": "核心项目 · 进行中", "How does the ischemic microenvironment reshape Treg states, and how might these states contribute to tissue repair?": "缺血微环境如何重塑Treg状态，以及这些状态可能如何参与组织修复？", "Model": "模型", "Single-cell profiling": "单细胞分析", "Functional validation": "功能验证", "Mechanistic exploration": "机制探索", "01 / Research question": "01 / 科学问题", "From ischemic tissue context to Treg state and repair": "从缺血组织环境到Treg状态与组织修复", "The project links an in vivo ischemia model with immune profiling, single-cell analysis, and functional validation.": "该项目将体内缺血模型、免疫表型、单细胞分析与功能验证相结合。", "02 / What I have completed": "02 / 已完成工作", "✓ MODEL": "✓ 模型", "Established the mouse HLI model and coordinated ischemic-tissue collection.": "建立小鼠HLI模型并协调缺血组织采集。", "✓ PROFILING": "✓ 分析", "Immune & single-cell analysis": "免疫与单细胞分析", "Flow cytometry, scRNA-seq, and scTCR-seq to characterize immune and Treg states.": "通过流式细胞术、scRNA-seq和scTCR-seq解析免疫细胞及Treg状态。", "✓ VALIDATION": "✓ 验证", "Cell sorting, molecular assays, and functional experiments for selected Treg populations.": "针对特定Treg群体开展细胞分选、分子检测及功能实验。", "○ ONGOING": "○ 进行中", "Testing candidate regulatory signals linked to Treg function and tissue repair.": "验证与Treg功能及组织修复相关的候选调控信号。", "I led the animal model and tissue workflow, performed immune characterization, contributed to single-cell analysis, and carried out downstream validation.": "我主导动物模型与组织处理流程，完成免疫表型分析，参与单细胞分析，并开展后续功能验证。", "Selected quantitative findings and mechanistic conclusions remain unpublished and are intentionally not shown here.": "部分定量结果和机制结论尚未发表，因此此处不予公开。", "The core model, profiling, and validation stages are complete. Mechanistic exploration is ongoing.": "核心模型、单细胞分析及验证阶段已完成，目前主要开展机制探索。", "Establish the mouse HLI model and collect ischemic tissues for downstream immune analysis.": "建立小鼠HLI模型并采集缺血组织，用于后续免疫学分析。", "Characterize Treg heterogeneity, transcriptional states, and clonal features.": "解析Treg异质性、转录状态及克隆特征。", "Flow cytometry · cell sorting · molecular and functional assays": "流式细胞术 · 细胞分选 · 分子与功能实验", "Test candidate mechanisms that may connect Treg state regulation with repair-related functions.": "验证可能连接Treg状态调控与组织修复功能的候选机制。", "02 / My role": "02 / 我的职责", "I led the animal model and tissue workflow, performed immune characterization, contributed to single-cell analysis, and carried out downstream functional validation.": "我主导动物模型与组织处理流程，完成免疫表型分析，参与单细胞分析，并开展后续功能验证。", "03 / Methods demonstrated": "03 / 技术能力", "Methods are kept concise because they are already embedded in the framework above.": "相关技术方法已融入上述研究框架，此处仅作简要汇总。"};
   const records = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
